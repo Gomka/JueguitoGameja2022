@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Character;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -17,6 +18,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 fallingForce = Vector3.zero;
     private Task _canJumpAgain = Task.CompletedTask;
     [SerializeField] private Vector3 jumpForce = new(0, 7.4f, 0);
+    [SerializeField] private Animator animator;
 
     void Start()
     {
@@ -47,6 +49,7 @@ public class Movement : MonoBehaviour
 
         if (this.isGrounded)
         {
+            this.animator.SetBool("IsJumping", false);
             this.fallingForce = Vector3.zero;
             if (characterInput.jump)
             {
@@ -57,11 +60,15 @@ public class Movement : MonoBehaviour
                 }
             }
         }
+        else
+            this.animator.SetBool("IsJumping", true);
+
 
         var vel = this.rb.velocity;
         vel.x = moveForce.x;
         vel.z = moveForce.z;
         this.rb.velocity = vel;
+        this.animator.SetFloat("Speed", vel.magnitude);
         if (characterInput.roll)
             roll();
     }

@@ -32,7 +32,8 @@ public class Movement : MonoBehaviour
             movement = new Vector2(
                 Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1),
                 Mathf.Clamp(Input.GetAxisRaw("Vertical"), -1, 1)),
-            jump = Input.GetKey("space")
+            jump = Input.GetKey("space"),
+            roll = Input.GetKey("r")
         });
     }
 
@@ -75,6 +76,7 @@ public class Movement : MonoBehaviour
 
     private void roll()
     {
+        this.animator.SetTrigger("Roll");
     }
 
     private bool CheckGround()

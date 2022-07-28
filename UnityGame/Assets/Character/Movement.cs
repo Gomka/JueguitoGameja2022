@@ -33,6 +33,8 @@ public class Movement : MonoBehaviour
                 Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1),
                 Mathf.Clamp(Input.GetAxisRaw("Vertical"), -1, 1)),
             jump = Input.GetKey("space"),
+            sex = Input.GetKey("e"),
+            sus = Input.GetKey("q"),
             roll = Input.GetKey("r")
         });
     }
@@ -72,11 +74,25 @@ public class Movement : MonoBehaviour
         this.animator.SetFloat("Speed", vel.magnitude);
         if (characterInput.roll)
             roll();
+        if (characterInput.sex)
+            sex();
+        if (characterInput.sus)
+            sus();
     }
 
     private void roll()
     {
         this.animator.SetTrigger("Roll");
+    }
+
+    private void sex()
+    {
+        this.animator.SetTrigger("Sex");
+    }
+
+    private void sus()
+    {
+        this.animator.SetTrigger("Sus");
     }
 
     private bool CheckGround()

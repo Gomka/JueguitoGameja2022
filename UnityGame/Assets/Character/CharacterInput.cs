@@ -9,5 +9,7 @@ namespace Character
         public bool jump;
         public bool interact;
         public bool roll;
+        public bool sex;
+        public bool sus;
     }
 }

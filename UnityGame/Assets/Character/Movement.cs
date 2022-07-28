@@ -62,6 +62,12 @@ public class Movement : MonoBehaviour
         vel.x = moveForce.x;
         vel.z = moveForce.z;
         this.rb.velocity = vel;
+        if (characterInput.roll)
+            roll();
+    }
+
+    private void roll()
+    {
     }
 
     private bool CheckGround()

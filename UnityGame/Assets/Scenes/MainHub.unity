@@ -1233,6 +1233,8 @@ GameObject:
   m_Component:
   - component: {fileID: 482095312}
   - component: {fileID: 482095313}
+  - component: {fileID: 482095315}
+  - component: {fileID: 482095314}
   m_Layer: 0
   m_Name: cuadro_gamejante
   m_TagString: Untagged
@@ -1307,6 +1309,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &482095314
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482095311}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 8.59, z: 1.618919}
+  m_Center: {x: -0, y: 0, z: -0.7094595}
+--- !u!114 &482095315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482095311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583880698f01f41459ecda85e4f0b0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 1
 --- !u!1001 &506064405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,6 +1473,8 @@ GameObject:
   m_Component:
   - component: {fileID: 649217812}
   - component: {fileID: 649217813}
+  - component: {fileID: 649217815}
+  - component: {fileID: 649217814}
   m_Layer: 0
   m_Name: gameja_navideja
   m_TagString: Untagged
@@ -1519,6 +1549,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &649217814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649217811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 8.59, z: 1.0533234}
+  m_Center: {x: -0, y: 0, z: -0.42666167}
+--- !u!114 &649217815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649217811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583880698f01f41459ecda85e4f0b0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 3
 --- !u!1001 &652574052
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3460,6 +3516,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8230429397910500175, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230429397910500175, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8230429397910500178, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}

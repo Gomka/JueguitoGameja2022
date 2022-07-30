@@ -5,7 +5,22 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainHub.unity
+    guid: e35313dcac9685a47930dd4dacf4293e
+  - enabled: 1
+    path: Assets/Scenes/Gameja 1/SalaGameja1 1.unity
+    guid: 95f5054d39f0d0f498abc1d1154bc8f5
+  - enabled: 1
+    path: Assets/Scenes/Gameja 1/GanadorGameja1.unity
+    guid: 65e00bcf2f7605343a339f5cc620ccea
+  - enabled: 1
+    path: Assets/Scenes/Gameja Navideja/SalaGamejaNavideja.unity
+    guid: 2d154a8e450e10449a4c500047e6ed87
+  - enabled: 1
+    path: Assets/Scenes/Gameja Navideja/GanadorGamejaNavideja 1.unity
+    guid: d74e01310deb88246ac63af4c75654f8
   m_configObjects: {}

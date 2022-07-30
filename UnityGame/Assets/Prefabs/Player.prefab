@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d1527f26f8a9b418ea982b6a54c338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volume: 0.3
   audio: {fileID: 9072211151775522080}
   goofySounds:
   - {fileID: 8300000, guid: 7e5a8829dc6de5347a56372141cad938, type: 3}
@@ -212,6 +213,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2944aef23b4f7f3428874ea1f7fc17a2, type: 3}
   - {fileID: 8300000, guid: 7d15bfb2eb377354ebf9b4da3b7dec69, type: 3}
   - {fileID: 8300000, guid: 2d3ad2327020788499a5cf5c50715e36, type: 3}
+  sexwith: {fileID: 8300000, guid: 868ea31af30e8c243b164dbb0e278a6d, type: 3}
 --- !u!54 &8230429397910500177
 Rigidbody:
   m_ObjectHideFlags: 0

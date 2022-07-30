@@ -5,8 +5,10 @@ using Character;
 
 public class PlayerSounds : MonoBehaviour
 {
+    [SerializeField] private float volume = 0.3f;
     [SerializeField] private AudioSource audio;
     [SerializeField] private AudioClip[] goofySounds;
+
 
     void Update()
     {
@@ -24,6 +26,6 @@ public class PlayerSounds : MonoBehaviour
     {         
         int rand = Random.Range(0,goofySounds.Length);
         Debug.Log(rand); 
-        audio.PlayOneShot(goofySounds[rand], 0.3f);
+        audio.PlayOneShot(goofySounds[rand], volume);
     }
 }

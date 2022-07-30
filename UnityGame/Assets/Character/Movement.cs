@@ -23,7 +23,10 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 jumpForce = new(0, 7.4f, 0);
 
     [SerializeField] private Animator animator;
+    //TODO: DELETE
     [SerializeField] private SpriteRenderer spriteRenderer;
+    
+
     [SerializeField] private PlayerSounds _playerSounds;
     private CharacterInput _characterInput;
     private bool sec = false;
@@ -150,9 +153,11 @@ public class Movement : MonoBehaviour
     {
         this.sec = !this.sec;
         this.animator.SetTrigger("Sex");
-        Debug.Log(this.sec);
+        //TODO: DELETE
         this.spriteRenderer.material.SetInteger("_Secondary", this.sec ? 1 : 0);
+        //TODO: DELETE
         this.spriteRenderer.material.SetFloat("_RippleStrength", this.sec ? 1 : 0);
+
         this._playerSounds.PlaySex();
     }
 

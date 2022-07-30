@@ -1,9 +1,12 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Character;
+using Paintings;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Movement : MonoBehaviour
 {
@@ -18,25 +21,81 @@ public class Movement : MonoBehaviour
     [SerializeField] private Vector3 fallingForce = Vector3.zero;
     private Task _canJumpAgain = Task.CompletedTask;
     [SerializeField] private Vector3 jumpForce = new(0, 7.4f, 0);
+
     [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private PlayerSounds _playerSounds;
+    private CharacterInput _characterInput;
+    private bool sec = false;
 
     void Start()
     {
+        this._characterInput = new CharacterInput()
+            { movement = Vector2.zero, jump = false, sex = false, sus = false, roll = false };
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if (Input.GetKey("space"))
+        {
+            this._characterInput.jump = true;
+        }
+
+        if (Input.GetKeyDown("e"))
+        {
+            this._characterInput.sex = true;
+        }
+
+        if (Input.GetKeyDown("q"))
+        {
+            this._characterInput.sus = true;
+        }
+
+        if (Input.GetKeyDown("r"))
+        {
+            this._characterInput.roll = true;
+        }
+
+        this._characterInput.movement = new Vector2(
+            Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1),
+            Mathf.Clamp(Input.GetAxisRaw("Vertical"), -1, 1));
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        //MarioPainting
+        if (!other.TryGetComponent(out MarioPainting mp)) return;
+        //TODO: Make it work
+        mp.spriteRenderer.material.SetInteger("_Secondary", this.sec ? 1 : 0);
+        mp.spriteRenderer.material.SetFloat("_RippleStrength", this.sec ? 1 : 0);
+        // Enter the scene
+        //TODO: TIMEOUT
+        SceneManager.LoadScene(mp.sceneName);
+    }
+
     void FixedUpdate()
     {
-        Move(new CharacterInput
-        {
-            movement = new Vector2(
-                Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1),
-                Mathf.Clamp(Input.GetAxisRaw("Vertical"), -1, 1)),
-            jump = Input.GetKey("space"),
-            sex = Input.GetKey("e"),
-            sus = Input.GetKey("q"),
-            roll = Input.GetKey("r")
-        });
+        // new CharacterInput
+        // {
+        //     movement = new Vector2(
+        //         Mathf.Clamp(Input.GetAxisRaw("Horizontal"), -1, 1),
+        //         Mathf.Clamp(Input.GetAxisRaw("Vertical"), -1, 1)),
+        //     jump = Input.GetKey("space"),
+        //     sex = Input.GetKeyDown("e"),
+        //     sus = Input.GetKeyDown("q"),
+        //     roll = Input.GetKeyDown("r")
+        // }
+        Move(this._characterInput);
+        this._characterInput.movement = Vector2.zero;
+
+        this._characterInput.jump = false;
+
+        this._characterInput.sex = false;
+
+        this._characterInput.sus = false;
+
+        this._characterInput.roll = false;
     }
 
     void Move(CharacterInput characterInput)
@@ -58,6 +117,7 @@ public class Movement : MonoBehaviour
             {
                 if (this._canJumpAgain.IsCompleted)
                 {
+                    this._playerSounds.PlayRandomSound();
                     this.rb.AddForce(ApplyJumpForce(), ForceMode.Impulse);
                     this._canJumpAgain = Task.Delay(150);
                 }
@@ -83,16 +143,23 @@ public class Movement : MonoBehaviour
     private void roll()
     {
         this.animator.SetTrigger("Roll");
+        this._playerSounds.PlayRandomSound();
     }
 
     private void sex()
     {
+        this.sec = !this.sec;
         this.animator.SetTrigger("Sex");
+        Debug.Log(this.sec);
+        this.spriteRenderer.material.SetInteger("_Secondary", this.sec ? 1 : 0);
+        this.spriteRenderer.material.SetFloat("_RippleStrength", this.sec ? 1 : 0);
+        this._playerSounds.PlaySex();
     }
 
     private void sus()
     {
         this.animator.SetTrigger("Sus");
+        this._playerSounds.PlayRandomSound();
     }
 
     private bool CheckGround()

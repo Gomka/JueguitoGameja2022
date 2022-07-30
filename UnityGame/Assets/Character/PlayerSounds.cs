@@ -11,26 +11,14 @@ public class PlayerSounds : MonoBehaviour
     [SerializeField] private AudioClip sexwith;
 
 
-    void Update()
+    public void PlaySex()
     {
-        if(Input.GetKeyDown("space") || Input.GetKeyDown("q")) {
-            PlayRandomSound();
-        }
-
-        if(Input.GetKeyDown("e")) {
-            audio.PlayOneShot(sexwith, volume);
-        }
-
-        if(Input.GetKey("r")) { //chaos
-            PlayRandomSound();
-        }
-
+        this.audio.PlayOneShot(this.sexwith, this.volume);
     }
 
-    void PlayRandomSound()
-    {         
-        int rand = Random.Range(0,goofySounds.Length);
-        Debug.Log(rand); 
-        audio.PlayOneShot(goofySounds[rand], volume);
+    public void PlayRandomSound()
+    {
+        int rand = Random.Range(0, this.goofySounds.Length);
+        this.audio.PlayOneShot(this.goofySounds[rand], this.volume);
     }
 }

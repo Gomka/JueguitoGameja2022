@@ -14,7 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Camera _camera;
     [SerializeField] private float speed = 5f;
     [SerializeField] private Vector3 gravity = new Vector3(0, -9.81f, 0);
-    public bool isGrounded;
+    public bool isGrounded = true;
     [SerializeField] private List<Transform> groundMarkers;
     [SerializeField] private float distance = 0.1f;
     [SerializeField] private Rigidbody rb;
@@ -24,8 +24,7 @@ public class Movement : MonoBehaviour
 
     [SerializeField] private Animator animator;
     //TODO: DELETE
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    
+    [SerializeField] private SpriteRenderer spriteRenderer;    
 
     [SerializeField] private PlayerSounds _playerSounds;
     private CharacterInput _characterInput;
@@ -40,7 +39,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey("space"))
+
+        if (Input.GetKeyDown("space") || Input.GetKeyDown("f"))
         {
             this._characterInput.jump = true;
         }
@@ -67,6 +67,7 @@ public class Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         //MarioPainting
         if (!other.TryGetComponent(out MarioPainting mp)) return;
         //TODO: Make it work
@@ -75,6 +76,8 @@ public class Movement : MonoBehaviour
         // Enter the scene
         //TODO: TIMEOUT
         SceneManager.LoadScene(mp.sceneName);
+
+        
     }
 
     void FixedUpdate()

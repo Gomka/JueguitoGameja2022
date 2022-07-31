@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: cf6f79de05e83b542a24fc4e2f015e22, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -2180,7 +2180,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1402758661513540240, guid: 4ecf6aa2a2182cf4c843c0d565e94cd0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1402758661513540240, guid: 4ecf6aa2a2182cf4c843c0d565e94cd0, type: 3}
       propertyPath: m_LocalScale.x
@@ -2254,7 +2254,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 4
-  time: 0
+  time: 0.1
+  volume: 0.3
+  mat: {fileID: 0}
+  audio: {fileID: 8230429398924912867}
+  portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
 --- !u!65 &447727262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3593,14 +3597,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778356884}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.900925, y: -0.25192362, z: 0.18890677, w: 0.29863524}
   m_LocalPosition: {x: 3.1176279, y: 10.111188, z: 33.432022}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 39.292, y: 165.795, z: 206.151}
 --- !u!4 &778758541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013144769684, guid: c918d403abc2b4741aa442ae6baf40a7, type: 3}
@@ -5727,7 +5731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257039093}
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 10.26, y: 4.61, z: 19.92}
+  m_LocalPosition: {x: 0, y: 4.61, z: 19.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5747,7 +5751,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 0
-  time: 1
+  time: 1.5
+  volume: 0.3
+  mat: {fileID: 2100000, guid: 3414d13ebf7af3e42b2ccfd65bae0158, type: 2}
+  audio: {fileID: 8230429398924912867}
+  portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
 --- !u!65 &1257039097
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8314,3 +8322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4d1527f26f8a9b418ea982b6a54c338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &8230429398924912867 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9072211151775522080, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
+  m_PrefabInstance: {fileID: 8230429398924912865}
+  m_PrefabAsset: {fileID: 0}

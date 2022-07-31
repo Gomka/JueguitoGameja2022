@@ -1142,7 +1142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: 3
-  time: 0
+  time: 0.1
+  volume: 0.3
+  mat: {fileID: 0}
+  audio: {fileID: 561157300}
+  portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
 --- !u!65 &476230743
 BoxCollider:
   m_ObjectHideFlags: 0

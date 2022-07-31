@@ -182,6 +182,8 @@ MonoBehaviour:
   fallingForce: {x: 0, y: 0, z: 0}
   jumpForce: {x: 0, y: 7.4, z: 0}
   animator: {fileID: 8230429397910500180}
+  spriteRenderer: {fileID: 0}
+  _playerSounds: {fileID: 0}
 --- !u!114 &4767721431472789546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +339,7 @@ Camera:
   m_GameObject: {fileID: 8230429398331496386}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.101548605, g: 0.11342017, b: 0.13207549, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2

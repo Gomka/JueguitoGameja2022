@@ -3168,6 +3168,70 @@ PrefabInstance:
     - {fileID: 64000010027859554, guid: 26007c3f3193f7a45ac66691b461b842, type: 3}
     - {fileID: 64000011796442280, guid: 26007c3f3193f7a45ac66691b461b842, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 26007c3f3193f7a45ac66691b461b842, type: 3}
+--- !u!1 &1544178796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1544178799}
+  - component: {fileID: 1544178798}
+  - component: {fileID: 1544178797}
+  m_Layer: 0
+  m_Name: DeadZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1544178797
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544178796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 148.1, y: 1, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1544178798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544178796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583880698f01f41459ecda85e4f0b0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: 2
+  time: 1.5
+  volume: 0.3
+  mat: {fileID: 0}
+  audio: {fileID: 946101830}
+  portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
+--- !u!4 &1544178799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544178796}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.9, y: -9.7, z: -1.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1558185327
 PrefabInstance:
   m_ObjectHideFlags: 0

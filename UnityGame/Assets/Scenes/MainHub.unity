@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRendererNullable:
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 482095313}
   sceneName: SalaGameja1 1
   audio: {fileID: 1411052971}
   portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
@@ -1829,7 +1829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spriteRendererNullable:
-    spriteRenderer: {fileID: 0}
+    spriteRenderer: {fileID: 649217813}
   sceneName: SalaGamejaNavideja
   audio: {fileID: 1411052971}
   portal: {fileID: 8300000, guid: 497dc15d219b55142baacd457661ff01, type: 3}
@@ -4134,6 +4134,10 @@ PrefabInstance:
     - target: {fileID: 8230429397910500176, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
       propertyPath: debug
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8230429397910500176, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
+      propertyPath: speed
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8230429397910500176, guid: ee89fcd0cc4826d48888208e8ee6c634, type: 3}
       propertyPath: distance

@@ -2861,7 +2861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 597884709}
-  speed: 7
+  speed: 12
   gravity: {x: 0, y: -9.81, z: 0}
   isGrounded: 0
   groundMarkers:

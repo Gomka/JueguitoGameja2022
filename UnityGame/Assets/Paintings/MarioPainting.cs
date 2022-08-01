@@ -28,18 +28,14 @@ namespace Paintings
 
         private void OnTriggerEnter(Collider other)
         {
-            Debug.Log("xd");
             if (this._entered) return;
-            Debug.Log("xd");
 
             if (!other.TryGetComponent(out Movement cc)) return;
-            Debug.Log("xd");
 
             this._entered = true;
             this._spriteRendererNullable.spriteRenderer.material = this.mat;
-            this._spriteRendererNullable.spriteRenderer.material.SetInteger("_Secondary", 1);
+            //this._spriteRendererNullable.spriteRenderer.material.SetInteger("_Secondary", 0);
             this._spriteRendererNullable.spriteRenderer.material.SetFloat("_RippleStrength", 1);
-            Debug.Log("xd");
 
             StartCoroutine(ChangeSceneCoroutine());
         }
